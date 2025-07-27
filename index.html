@@ -1,280 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expressions Cakery - Contact Us</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            font-size: 30px;
-        }
-        
-        .logo-container {
-            text-align: center;
-            margin-bottom: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .logo-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid #fff;
-            box-shadow: 0 8px 20px rgba(216, 93, 93, 0.2);
-            margin-bottom: 20px;
-            animation: float 4s ease-in-out infinite;
-        }
-        
-        h2 {
-            font-size: 2.5rem;
-            color: #d85d5d;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .tagline {
-            color: #888;
-            font-style: italic;
-            margin-bottom: 30px;
-            max-width: 500px;
-            text-align: center;
-        }
-        
-        .links-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            max-width: 900px;
-            width: 100%;
-        }
-        
-        .link-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .link-item:hover {
-            transform: translateY(-10px);
-        }
-        
-        .icon-btn {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            color: white;
-            margin-bottom: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .icon-btn:after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255,255,255,0.2);
-            transform: scale(0);
-            border-radius: 50%;
-            transition: transform 0.3s ease;
-        }
-        
-        .icon-btn:hover:after {
-            transform: scale(1);
-        }
-        
-        .icon-btn:hover {
-            transform: scale(1.1) translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-        
-        .facebook {
-            background: linear-gradient(45deg, #3b5998, #0078d7);
-        }
-        
-        .instagram {
-            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-        }
-        
-        .whatsapp {
-            background: linear-gradient(45deg, #25D366, #128C7E);
-        }
-        
-        .location {
-            background: linear-gradient(45deg, #FF0000, #FF6B6B);
-        }
-        
-        .email {
-            background: linear-gradient(45deg, #EA4335, #FBBC05);
-        }
-        
-        .phone {
-            background: linear-gradient(45deg, #4285F4, #34A853);
-        }
-        
-        .link-text{
-            color: #555;
-            font-size: 25px;
-            font-weight: 500;
-            word-break: break-word;
-            line-height: 1.4;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .links-container {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-            
-            .logo-img {
-                width: 100px;
-                height: 100px;
-            }
-            
-            h2 {
-                font-size: 2rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .links-container {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-            
-            .icon-btn {
-                width: 60px;
-                height: 60px;
-                font-size: 24px;
-            }
-            
-            h2 {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expressions Cakery - Contact Us</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      font-size: 30px;
+    }
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid #fff;
+      box-shadow: 0 10px 25px rgba(216, 93, 93, 0.25);
+      margin-bottom: 25px;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: #d85d5d;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .tagline {
+      color: #888;
+      font-style: italic;
+      margin-bottom: 30px;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    .links-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      max-width: 900px;
+      width: 100%;
+    }
+
+    .link-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .link-item:hover {
+      transform: translateY(-10px);
+    }
+
+    .icon-btn {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      color: white;
+      margin-bottom: 15px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .icon-btn:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(0);
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+    }
+
+    .icon-btn:hover:after {
+      transform: scale(1);
+    }
+
+    .icon-btn:hover {
+      transform: scale(1.1) translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .facebook {
+      background: linear-gradient(45deg, #3b5998, #0078d7);
+    }
+
+    .instagram {
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    }
+
+    .whatsapp {
+      background: linear-gradient(45deg, #25D366, #128C7E);
+    }
+
+    .location {
+      background: linear-gradient(45deg, #FF0000, #FF6B6B);
+    }
+
+    .email {
+      background: linear-gradient(45deg, #EA4335, #FBBC05);
+    }
+
+    .phone {
+      background: linear-gradient(45deg, #4285F4, #34A853);
+    }
+
+    .link-text {
+      color: #555;
+      font-size: 25px;
+      font-weight: 500;
+      word-break: break-word;
+      line-height: 1.4;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .links-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .logo-img {
+        width: 130px;
+        height: 130px;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .links-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .logo-img {
+        width: 110px;
+        height: 110px;
+      }
+
+      .icon-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="logo-container">
-        <img src="Expression_cakery.jpg" alt="Expressions Cakery Logo" class="logo-img">
-        <h2>Expressions Cakery</h2>
-        <p class="tagline">A decade of expressions</p>
-    </div>
-    
-    <div class="links-container">
-        <!-- Facebook -->
-        <div class="link-item">
-            <a href="https://www.facebook.com/share/17iv16Pooi/?mibextid=qi2Omg" target="_blank" class="icon-btn facebook">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <p class="link-text">Expressions cakery</p>
-        </div>
-        
-        <!-- Instagram -->
-        <div class="link-item">
-            <a href="https://www.instagram.com/expressionscakery?igsh=cTJqZGF4NXN2Mm1l" target="_blank" class="icon-btn instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <p class="link-text">expressionscakery</p>
-        </div>
-        
-        <!-- WhatsApp -->
-        <div class="link-item">
-            <a href="https://wa.me/923232907447" target="_blank" class="icon-btn whatsapp">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-            <p class="link-text">+92 323 2907447</p>
-        </div>
-        
-        <!-- Location -->
-        <div class="link-item">
-            <a href="https://maps.google.com/?q=PECHS, Block-3, Karachi" target="_blank" class="icon-btn location">
-                <i class="fas fa-map-marker-alt"></i>
-            </a>
-            <p class="link-text">PECHS, Block-3, Karachi</p>
-        </div>
-        
-        <!-- Email -->
-        <div class="link-item">
-            <a href="mailto:expressionss.cakery@gmail.com" class="icon-btn email">
-                <i class="fas fa-envelope"></i>
-            </a>
-            <p class="link-text">expressionss.cakery@gmail.com</p>
-        </div>
-        
-        <!-- Phone -->
-        <div class="link-item">
-            <a href="tel:+923232907447" class="icon-btn phone">
-                <i class="fas fa-phone-alt"></i>
-            </a>
-            <p class="link-text">+92 323 2907447</p>
-        </div>
+  <div class="logo-container">
+    <img src="Expression_cakery.jpg" alt="Expressions Cakery Logo" class="logo-img" />
+    <h2>Expressions Cakery</h2>
+    <p class="tagline">A decade of expressions</p>
+  </div>
+
+  <div class="links-container">
+    <div class="link-item">
+      <a href="https://www.facebook.com/share/17iv16Pooi/?mibextid=qi2Omg" target="_blank" class="icon-btn facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <p class="link-text">Expressions cakery</p>
     </div>
 
-    <script>
-        // Add click animation
-        document.querySelectorAll('.icon-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                this.style.transform = 'scale(0.9)';
-                setTimeout(() => {
-                    this.style.transform = 'scale(1.1) translateY(-5px)';
-                }, 100);
-            });
-        });
-        
-        // Animate items sequentially
-        document.querySelectorAll('.link-item').forEach((item, index) => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(20px)';
-            item.style.animation = `fadeIn 0.5s ease forwards ${index * 0.1 + 0.5}s`;
-        });
-    </script>
+    <div class="link-item">
+      <a href="https://www.instagram.com/expressionscakery?igsh=cTJqZGF4NXN2Mm1l" target="_blank" class="icon-btn instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <p class="link-text">expressionscakery</p>
+    </div>
+
+    <div class="link-item">
+      <a href="https://wa.me/923232907447" target="_blank" class="icon-btn whatsapp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <p class="link-text">+92 323 2907447</p>
+    </div>
+
+    <div class="link-item">
+      <a href="https://maps.google.com/?q=PECHS, Block-3, Karachi" target="_blank" class="icon-btn location">
+        <i class="fas fa-map-marker-alt"></i>
+      </a>
+      <p class="link-text">PECHS, Block-3, Karachi</p>
+    </div>
+
+    <div class="link-item">
+      <a href="mailto:expressionss.cakery@gmail.com" class="icon-btn email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <p class="link-text">expressionss.cakery@gmail.com</p>
+    </div>
+
+    <div class="link-item">
+      <a href="tel:+923232907447" class="icon-btn phone">
+        <i class="fas fa-phone-alt"></i>
+      </a>
+      <p class="link-text">+92 323 2907447</p>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.icon-btn').forEach(btn => {
+      btn.addEventListener('click', function () {
+        this.style.transform = 'scale(0.9)';
+        setTimeout(() => {
+          this.style.transform = 'scale(1.1) translateY(-5px)';
+        }, 100);
+      });
+    });
+
+    document.querySelectorAll('.link-item').forEach((item, index) => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(20px)';
+      item.style.animation = `fadeIn 0.5s ease forwards ${index * 0.1 + 0.5}s`;
+    });
+  </script>
 </body>
 </html>
