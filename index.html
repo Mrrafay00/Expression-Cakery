@@ -23,6 +23,7 @@
       justify-content: center;
       padding: 20px;
       font-size: 30px;
+      font-family: 'Poppins', sans-serif;
     }
 
     .logo-container {
@@ -34,10 +35,10 @@
     }
 
     .logo-img {
-      width: 300px; /* ✅ Final updated width */
-      height: 160px;
-      border-radius: 12px;
-      object-fit: cover;
+      width: 180px; /* Set equal width and height for a perfect circle */
+      height: 180px; /* Set equal width and height for a perfect circle */
+      border-radius: 50%; /* Changed to 50% for a circular shape */
+      object-fit: cover; /* Ensures the image covers the circular area */
       border: 6px solid #fff;
       box-shadow: 0 10px 25px rgba(216, 93, 93, 0.25);
       margin-bottom: 25px;
@@ -49,6 +50,7 @@
       color: #d85d5d;
       margin-bottom: 10px;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      font-family: 'Playfair Display', serif;
     }
 
     .tagline {
@@ -61,39 +63,43 @@
 
     .links-container {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px 40px;
       max-width: 900px;
       width: 100%;
     }
 
     .link-item {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
-      text-align: center;
+      justify-content: flex-start; /* Aligns content to the left within its cell (for larger screens) */
+      padding-left: 20px; /* Adds consistent padding from the left edge of the grid cell */
+      gap: 15px;
+      text-align: left;
       transition: all 0.3s ease;
     }
 
     .link-item:hover {
-      transform: translateY(-10px);
+      transform: translateY(-5px);
     }
 
     .icon-btn {
-      width: 70px;
-      height: 70px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 28px;
+      font-size: 24px;
       color: white;
-      margin-bottom: 15px;
+      margin-bottom: 0;
       cursor: pointer;
       transition: all 0.3s ease;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       position: relative;
       overflow: hidden;
+      flex-shrink: 0;
     }
 
     .icon-btn:after {
@@ -114,7 +120,7 @@
     }
 
     .icon-btn:hover {
-      transform: scale(1.1) translateY(-5px);
+      transform: scale(1.05);
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     }
 
@@ -144,10 +150,14 @@
 
     .link-text {
       color: #555;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 500;
       word-break: break-word;
       line-height: 1.4;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: calc(100% - 75px);
     }
 
     @keyframes fadeIn {
@@ -175,39 +185,63 @@
 
     @media (max-width: 768px) {
       .links-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        grid-template-columns: 1fr;
+        gap: 25px;
+        /* Remove padding from container, as items will handle their own alignment */
+        padding: 0;
+        /* Make links-container a flex container itself to center its items */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center the entire column of link-items */
       }
 
       .logo-img {
-        width: 240px;
-        height: 130px;
+        width: 150px;
+        height: 150px;
       }
 
       h2 {
         font-size: 2rem;
       }
+
+      .link-item {
+        /* KEY FIX: Align content to the left within EACH link-item */
+        justify-content: flex-start;
+        /* Add a fixed width to the link-item to control its overall size */
+        /* This max-width can be adjusted. It should be wide enough for the longest text. */
+        max-width: 280px; /* Example fixed width for link-item on small screens */
+        width: 90%; /* Make it responsive to screen width */
+        padding-left: 0; /* Remove padding as link-item will be centered by links-container */
+      }
+
+      .link-text {
+        white-space: normal; /* Allow text to wrap if the fixed width isn't enough */
+        max-width: calc(100% - 75px); /* Keep max-width relative to the new link-item width */
+      }
     }
 
     @media (max-width: 480px) {
-      .links-container {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
-
       .logo-img {
-        width: 180px;
-        height: 110px;
+        width: 120px;
+        height: 120px;
       }
 
       .icon-btn {
-        width: 60px;
-        height: 60px;
-        font-size: 24px;
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
       }
 
       h2 {
         font-size: 1.8rem;
+      }
+
+      .tagline {
+        font-size: 0.9rem;
+      }
+
+      .link-text {
+        font-size: 16px;
       }
     }
   </style>
@@ -268,7 +302,7 @@
       btn.addEventListener('click', function () {
         this.style.transform = 'scale(0.9)';
         setTimeout(() => {
-          this.style.transform = 'scale(1.1) translateY(-5px)';
+          this.style.transform = 'scale(1.05)';
         }, 100);
       });
     });
