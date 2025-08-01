@@ -16,39 +16,44 @@
 
     body {
       background: #e0f7fa;
-      min-height: 100vh;
+      /* --- START OF CHANGES FOR HEIGHT --- */
+      /* min-height: 100vh; */ /* Removed to allow content to define height */
+      height: 100vh; /* Use 100vh but allow content to shrink/grow within it */
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 20px;
+      /* Adjusted to manage vertical space more effectively within a constrained height */
+      justify-content: center; /* Changed to center to balance content vertically */
+      padding: 15px; /* Reduced overall padding to give more vertical space */
+      overflow-y: auto; /* Allow vertical scrolling only if content truly overflows */
+      /* --- END OF CHANGES FOR HEIGHT --- */
       font-size: 30px;
       font-family: 'Poppins', sans-serif;
     }
 
     .logo-container {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 20px; /* Reduced margin-bottom */
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
     .logo-img {
-      width: 180px; /* Set equal width and height for a perfect circle */
-      height: 180px; /* Set equal width and height for a perfect circle */
-      border-radius: 50%; /* Changed to 50% for a circular shape */
-      object-fit: cover; /* Ensures the image covers the circular area */
+      width: 150px; /* Slightly reduced logo size for more vertical space */
+      height: 150px; /* Slightly reduced logo size for more vertical space */
+      border-radius: 50%;
+      object-fit: cover;
       border: 6px solid #fff;
       box-shadow: 0 10px 25px rgba(216, 93, 93, 0.25);
-      margin-bottom: 25px;
+      margin-bottom: 20px; /* Reduced margin-bottom */
       animation: float 4s ease-in-out infinite;
     }
 
     h2 {
-      font-size: 2.5rem;
-      color: #00796b;
-      margin-bottom: 10px;
+      font-size: 2.2rem; /* Slightly reduced font size */
+      color: #d85d5d;
+      margin-bottom: 8px; /* Reduced margin-bottom */
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
       font-family: 'Playfair Display', serif;
     }
@@ -56,26 +61,28 @@
     .tagline {
       color: #888;
       font-style: italic;
-      margin-bottom: 30px;
+      margin-bottom: 20px; /* Reduced margin-bottom */
       max-width: 500px;
       text-align: center;
+      font-size: 0.9em; /* Slightly reduced font size */
     }
 
     .links-container {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 30px 40px;
-      max-width: 900px;
+      gap: 20px 30px; /* Reduced gaps between link items */
+      max-width: 800px; /* Slightly reduced max-width to be more compact */
       width: 100%;
+      padding-bottom: 15px; /* Add some padding at the bottom for spacing */
     }
 
     .link-item {
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: flex-start; /* Aligns content to the left within its cell (for larger screens) */
-      padding-left: 20px; /* Adds consistent padding from the left edge of the grid cell */
-      gap: 15px;
+      justify-content: flex-start;
+      padding-left: 15px; /* Slightly reduced padding */
+      gap: 12px; /* Slightly reduced gap between icon and text */
       text-align: left;
       transition: all 0.3s ease;
     }
@@ -85,13 +92,13 @@
     }
 
     .icon-btn {
-      width: 60px;
-      height: 60px;
+      width: 50px; /* Slightly reduced icon size */
+      height: 50px; /* Slightly reduced icon size */
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
+      font-size: 20px; /* Slightly reduced icon font size */
       color: white;
       margin-bottom: 0;
       cursor: pointer;
@@ -148,16 +155,19 @@
       background: linear-gradient(45deg, #4285F4, #34A853);
     }
 
+    .website {
+      background: linear-gradient(45deg, #6a11cb, #2575fc);
+    }
+
     .link-text {
       color: #555;
-      font-size: 18px;
+      font-size: 16px; /* Slightly reduced font size */
       font-weight: 500;
       word-break: break-word;
-      line-height: 1.4;
-      white-space: nowrap;
+      line-height: 1.3; /* Slightly reduced line height for compactness */
       overflow: hidden;
       text-overflow: ellipsis;
-      max-width: calc(100% - 75px);
+      max-width: calc(100% - 65px); /* Adjusted max-width based on new icon size and gap */
     }
 
     @keyframes fadeIn {
@@ -183,65 +193,73 @@
       }
     }
 
+    /* --- Responsive adjustments to ensure fitting within ~700px height --- */
     @media (max-width: 768px) {
+      body {
+        padding: 10px; /* Further reduce padding on smaller screens */
+        justify-content: flex-start; /* Align content from the top on small screens to save space */
+      }
       .links-container {
         grid-template-columns: 1fr;
-        gap: 25px;
-        /* Remove padding from container, as items will handle their own alignment */
-        padding: 0;
-        /* Make links-container a flex container itself to center its items */
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Center the entire column of link-items */
+        gap: 15px; /* Further reduce gap for single column */
+        padding: 0 10px 15px 10px; /* Add horizontal padding to container itself on mobile */
+        max-width: 350px; /* Constrain max-width for phone screens */
       }
 
       .logo-img {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
+        margin-bottom: 15px;
       }
 
       h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+      }
+
+      .tagline {
+        font-size: 0.85rem;
+        margin-bottom: 15px;
       }
 
       .link-item {
-        /* KEY FIX: Align content to the left within EACH link-item */
-        justify-content: flex-start;
-        /* Add a fixed width to the link-item to control its overall size */
-        /* This max-width can be adjusted. It should be wide enough for the longest text. */
-        max-width: 280px; /* Example fixed width for link-item on small screens */
-        width: 90%; /* Make it responsive to screen width */
-        padding-left: 0; /* Remove padding as link-item will be centered by links-container */
+        justify-content: flex-start; /* Keep flex-start for alignment */
+        width: 100%; /* Take full width of its parent (links-container) */
+        padding-left: 0; /* Remove padding if links-container has it */
+        /* To center the items within the single column, the links-container must center them */
+        /* But link-item content is flex-start */
       }
 
       .link-text {
-        white-space: normal; /* Allow text to wrap if the fixed width isn't enough */
-        max-width: calc(100% - 75px); /* Keep max-width relative to the new link-item width */
+        white-space: normal;
+        max-width: none; /* Allow full wrapping */
+        text-overflow: clip;
+        font-size: 15px; /* Further reduce font size */
       }
     }
 
     @media (max-width: 480px) {
       .logo-img {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
       }
 
       .icon-btn {
-        width: 55px;
-        height: 55px;
-        font-size: 22px;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
       }
 
       h2 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
       }
 
       .tagline {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
       }
 
       .link-text {
-        font-size: 16px;
+        font-size: 14px;
       }
     }
   </style>
@@ -295,6 +313,13 @@
       </a>
       <p class="link-text">+92 323 2907447</p>
     </div>
+
+    <div class="link-item">
+      <a href="https://www.expressionscakery.com" target="_blank" class="icon-btn website">
+        <i class="fas fa-globe"></i>
+      </a>
+      <p class="link-text">www.expressionscakery.com</p>
+    </div>
   </div>
 
   <script>
@@ -315,4 +340,3 @@
   </script>
 </body>
 </html>
-
